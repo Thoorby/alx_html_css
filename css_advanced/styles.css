@@ -1,177 +1,110 @@
 /* ============================= */
-/* GENERAL STYLES */
-/* ============================= */
-
-body {
-    font-family: 'Source Sans Pro', sans-serif;
-    margin: 0;
-    background-color: #f5f5f5;
-    color: #272727;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 15px 0;
-}
-
-p {
-    margin: 0 0 15px 0;
-}
-
-/* ============================= */
-/* HEADER & LOGO */
+/* HEADER STYLING */
 /* ============================= */
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e5e5;
+    padding: 20px 60px; /* padding as per Figma spacing */
+    background-color: #ffffff; /* header background from Figma */
+    border-bottom: 1px solid #e0e0e0; /* subtle border as per design */
     flex-wrap: wrap;
 }
 
 .logo {
-    height: 50px;
+    height: 60px; /* Figma height for logo */
     width: auto;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 25px;
+    list-style: none;
+    gap: 30px; /* spacing between nav items */
     margin: 0;
     padding: 0;
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: #1a1a1a; /* nav text color from Figma */
     font-weight: 600;
+    font-size: 16px;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #0077cc;
+    color: #0077cc; /* hover color */
 }
 
 /* ============================= */
-/* HERO SECTION */
+/* HERO / FIRST SECTION STYLING */
 /* ============================= */
 
 .hero {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: #e0f7fa;
+    text-align: left; /* left align text as per Figma */
+    padding: 100px 60px; /* top/bottom and left/right padding */
+    background-color: #f0f9ff; /* background color from Figma */
+    min-height: 400px; /* section height from Figma */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3rem; /* large hero title */
+    font-weight: 700;
+    color: #0d3b66; /* title color from Figma */
     margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.25rem; /* subtitle size */
+    color: #333333; /* text color */
     margin-bottom: 30px;
+    max-width: 600px; /* control line length */
 }
 
 .cta {
-    background-color: #0077cc;
-    color: #fff;
+    background-color: #ff6f61; /* button color from Figma */
+    color: #ffffff; /* text color */
+    padding: 14px 40px;
     border: none;
-    padding: 12px 30px;
+    border-radius: 8px;
     font-size: 1rem;
-    border-radius: 5px;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .cta:hover {
-    background-color: #005fa3;
+    background-color: #e65b50; /* hover shade */
 }
 
 /* ============================= */
-/* FEATURES SECTION */
-/* ============================= */
-
-.features {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 40px 20px;
-    gap: 20px;
-}
-
-.features article {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 25px;
-    flex: 1 1 250px; /* responsive cards */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.features article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
-
-.features h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.features p {
-    font-size: 1rem;
-    color: #555;
-}
-
-/* ============================= */
-/* FOOTER */
-/* ============================= */
-
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #333;
-    color: #fff;
-}
-
-/* ============================= */
-/* RESPONSIVE MEDIA QUERIES */
+/* RESPONSIVE HERO & HEADER */
 /* ============================= */
 
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: flex-start;
+        padding: 20px 30px;
     }
 
     nav ul {
         flex-direction: column;
         gap: 15px;
-        width: 100%;
-        margin-top: 10px;
+        margin-top: 15px;
+    }
+
+    .hero {
+        padding: 80px 30px;
     }
 
     .hero h1 {
-        font-size: 2rem;
-    }
-
-    .features {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .features article {
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.5rem;
+        font-size: 2.2rem;
     }
 
     .hero p {
@@ -179,7 +112,22 @@ footer {
     }
 
     .cta {
-        padding: 10px 20px;
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .cta {
+        padding: 10px 25px;
         font-size: 0.9rem;
     }
 }
