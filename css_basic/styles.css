@@ -1,0 +1,24 @@
+/* Make body a flex container arranged in a column */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make main a flex container arranged in a row */
+main {
+    display: flex;
+    flex-direction: row;
+    flex: auto; /* allow main to grow */
+}
+
+/* Article: 2/3 width */
+article {
+    flex: 2;
+    overflow-y: auto;
+}
+
+/* Aside: 1/3 width */
+aside {
+    flex: 1;
+    overflow-y: auto;
+}
