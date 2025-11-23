@@ -1,74 +1,102 @@
 /* ============================= */
+/* ROOT VARIABLES */
+/* ============================= */
+:root {
+    --primary-color: #0d3b66;
+    --secondary-color: #0077cc;
+    --bg-hero: #f0f9ff;
+    --bg-quote-start: #9a6aff;
+    --bg-quote-end: #b56aff;
+    --text-color: #272727;
+    --text-dim: rgba(255,255,255,0.9);
+    --avatar-size: 72px;
+    --gap: 20px;
+}
+
+/* ============================= */
+/* BASE RESET AND BODY */
+/* ============================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ============================= */
 /* HEADER STYLING */
 /* ============================= */
-
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 60px; /* padding as per Figma spacing */
-    background-color: #ffffff; /* header background from Figma */
-    border-bottom: 1px solid #e0e0e0; /* subtle border as per design */
+    padding: 20px 60px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
     flex-wrap: wrap;
 }
 
 .logo {
-    height: 60px; /* Figma height for logo */
+    height: 60px;
     width: auto;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 30px; /* spacing between nav items */
-    margin: 0;
-    padding: 0;
+    gap: 30px;
 }
 
 nav a {
     text-decoration: none;
-    color: #1a1a1a; /* nav text color from Figma */
+    color: #1a1a1a;
     font-weight: 600;
     font-size: 16px;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #0077cc; /* hover color */
+    color: var(--secondary-color);
 }
 
 /* ============================= */
-/* HERO / FIRST SECTION STYLING */
+/* HERO SECTION */
 /* ============================= */
-
 .hero {
-    text-align: left; /* left align text as per Figma */
-    padding: 100px 60px; /* top/bottom and left/right padding */
-    background-color: #f0f9ff; /* background color from Figma */
-    min-height: 400px; /* section height from Figma */
+    text-align: left;
+    padding: 100px 60px;
+    background-color: var(--bg-hero);
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .hero h1 {
-    font-size: 3rem; /* large hero title */
+    font-size: 3rem;
     font-weight: 700;
-    color: #0d3b66; /* title color from Figma */
+    color: var(--primary-color);
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .hero p {
-    font-size: 1.25rem; /* subtitle size */
-    color: #333333; /* text color */
+    font-size: 1.25rem;
+    color: #333333;
     margin-bottom: 30px;
-    max-width: 600px; /* control line length */
+    max-width: 600px;
 }
 
 .cta {
-    background-color: #ff6f61; /* button color from Figma */
-    color: #ffffff; /* text color */
+    background-color: #ff6f61;
+    color: #ffffff;
     padding: 14px 40px;
     border: none;
     border-radius: 8px;
@@ -79,13 +107,72 @@ nav a:hover {
 }
 
 .cta:hover {
-    background-color: #e65b50; /* hover shade */
+    background-color: #e65b50;
 }
 
 /* ============================= */
-/* RESPONSIVE HERO & HEADER */
+/* QUOTE / TESTIMONIAL SECTION */
 /* ============================= */
+.quote {
+    background: linear-gradient(90deg, var(--bg-quote-start) 0%, var(--bg-quote-end) 100%);
+    padding: 60px 0;
+    color: #fff;
+}
 
+.quote__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    padding: 0 24px;
+}
+
+.quote__avatar {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.9);
+    flex: 0 0 auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.quote__content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.quote__text {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--text-dim);
+    margin: 0;
+}
+
+.quote__text::before { content: "« "; }
+.quote__text::after { content: " »"; }
+
+.quote__author {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #fff;
+    margin: 0;
+}
+
+.quote__role {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.95);
+    margin: 0;
+    opacity: 0.95;
+}
+
+/* ============================= */
+/* RESPONSIVE STYLING */
+/* ============================= */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -115,6 +202,17 @@ nav a:hover {
         padding: 12px 30px;
         font-size: 0.95rem;
     }
+
+    .quote__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .quote__avatar {
+        width: 64px;
+        height: 64px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -129,5 +227,18 @@ nav a:hover {
     .cta {
         padding: 10px 25px;
         font-size: 0.9rem;
+    }
+
+    .quote__avatar {
+        width: 56px;
+        height: 56px;
+    }
+
+    .quote__text {
+        font-size: 1rem;
+    }
+
+    .quote__role {
+        font-size: 0.85rem;
     }
 }
