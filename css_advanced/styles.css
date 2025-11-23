@@ -1,244 +1,139 @@
 /* ============================= */
-/* ROOT VARIABLES */
+/* VIDEO LIST SECTION */
 /* ============================= */
-:root {
-    --primary-color: #0d3b66;
-    --secondary-color: #0077cc;
-    --bg-hero: #f0f9ff;
-    --bg-quote-start: #9a6aff;
-    --bg-quote-end: #b56aff;
-    --text-color: #272727;
-    --text-dim: rgba(255,255,255,0.9);
-    --avatar-size: 72px;
-    --gap: 20px;
+
+.videos {
+    padding: 80px 60px;
+    background: #ffffff;
+    text-align: center;
 }
 
-/* ============================= */
-/* BASE RESET AND BODY */
-/* ============================= */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-        "Open Sans", "Helvetica Neue", sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
-/* ============================= */
-/* HEADER STYLING */
-/* ============================= */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 60px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e0e0e0;
-    flex-wrap: wrap;
-}
-
-.logo {
-    height: 60px;
-    width: auto;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #1a1a1a;
-    font-weight: 600;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: var(--secondary-color);
-}
-
-/* ============================= */
-/* HERO SECTION */
-/* ============================= */
-.hero {
-    text-align: left;
-    padding: 100px 60px;
-    background-color: var(--bg-hero);
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero p {
-    font-size: 1.25rem;
+.videos h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 50px;
     color: #333333;
-    margin-bottom: 30px;
-    max-width: 600px;
 }
 
-.cta {
-    background-color: #ff6f61;
-    color: #ffffff;
-    padding: 14px 40px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.videos h2 span {
+    color: #c271ff; /* purple highlight from Figma */
+    font-weight: 700;
 }
 
-.cta:hover {
-    background-color: #e65b50;
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    justify-items: center;
 }
 
-/* ============================= */
-/* QUOTE / TESTIMONIAL SECTION */
-/* ============================= */
-.quote {
-    background: linear-gradient(90deg, var(--bg-quote-start) 0%, var(--bg-quote-end) 100%);
-    padding: 60px 0;
-    color: #fff;
+/* Video Card */
+.video-card {
+    width: 100%;
+    max-width: 240px;
+    text-align: left;
 }
 
-.quote__inner {
-    max-width: 1000px;
-    margin: 0 auto;
+.video-thumbnail {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-thumbnail .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+}
+
+.video-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 15px 0 8px;
+    color: #333333;
+}
+
+.video-card p.description {
+    font-size: 0.9rem;
+    color: #555555;
+    margin-bottom: 12px;
+}
+
+/* Author Row */
+.video-meta {
     display: flex;
     align-items: center;
-    gap: var(--gap);
-    padding: 0 24px;
+    gap: 10px;
+    margin: 10px 0 6px;
 }
 
-.quote__avatar {
-    width: var(--avatar-size);
-    height: var(--avatar-size);
+.video-meta img {
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgba(255,255,255,0.9);
-    flex: 0 0 auto;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
 }
 
-.quote__content {
+.video-meta .author {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #c271ff;
+}
+
+/* Stars + Time */
+.video-footer {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
-    min-width: 0;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.quote__text {
-    font-size: 1.05rem;
-    line-height: 1.5;
-    color: var(--text-dim);
-    margin: 0;
+.video-footer .stars {
+    color: #c271ff;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
 }
 
-.quote__text::before { content: "« "; }
-.quote__text::after { content: " »"; }
-
-.quote__author {
-    font-weight: 700;
-    font-size: 1.05rem;
-    color: #fff;
-    margin: 0;
-}
-
-.quote__role {
-    font-style: italic;
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.95);
-    margin: 0;
-    opacity: 0.95;
+.video-footer .time {
+    font-size: 0.85rem;
+    color: #999999;
 }
 
 /* ============================= */
-/* RESPONSIVE STYLING */
+/* RESPONSIVE VIDEO GRID */
 /* ============================= */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px 30px;
-    }
 
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 15px;
-    }
-
-    .hero {
-        padding: 80px 30px;
-    }
-
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .cta {
-        padding: 12px 30px;
-        font-size: 0.95rem;
-    }
-
-    .quote__inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .quote__avatar {
-        width: 64px;
-        height: 64px;
+@media (max-width: 1024px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
 }
 
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.8rem;
+@media (max-width: 600px) {
+    .videos {
+        padding: 60px 30px;
     }
 
-    .hero p {
-        font-size: 0.95rem;
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
-    .cta {
-        padding: 10px 25px;
-        font-size: 0.9rem;
-    }
-
-    .quote__avatar {
-        width: 56px;
-        height: 56px;
-    }
-
-    .quote__text {
-        font-size: 1rem;
-    }
-
-    .quote__role {
-        font-size: 0.85rem;
+    .video-card {
+        max-width: 300px;
     }
 }
