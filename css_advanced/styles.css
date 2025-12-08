@@ -136,4 +136,91 @@
     .video-card {
         max-width: 300px;
     }
+
+/* ============================= */
+/* FREE MEMBERSHIP SECTION */
+/* ============================= */
+
+.membership {
+    background-color: #0c1b33; /* dark navy from Figma */
+    padding: 80px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.membership h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.membership h2 span {
+    color: #b56aff; /* purple highlight */
+}
+
+.membership__grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto 50px auto;
+    flex-wrap: wrap;
+}
+
+.membership__item {
+    text-align: center;
+    max-width: 200px;
+}
+
+.membership__icon {
+    font-size: 48px;
+    color: #b56aff; /* purple icon color */
+    margin-bottom: 20px;
+}
+
+.membership__item-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.membership__item-text {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Membership button */
+.membership__btn {
+    background: linear-gradient(90deg, #b56aff, #9a6aff);
+    color: #ffffff;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.membership__btn:hover {
+    opacity: 0.85;
+}
+
+/* ============================= */
+/* RESPONSIVE MEMBERSHIP */
+/* ============================= */
+@media (max-width: 768px) {
+    .membership__grid {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .membership__icon {
+        font-size: 40px;
+    }
+
+    .membership h2 {
+        font-size: 1.6rem;
+    }
 }
